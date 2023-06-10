@@ -16,14 +16,19 @@ jobs:
     - name: Setup .NET
       uses: actions/setup-dotnet@v3
       with:
-        dotnet-version: netstandard2.1
+        dotnet-version: 6.0.x
     - name: Restore dependencies
-      run: dotnet restore
+      run: dotnet restore Moduler.Helpers/Moduler.Helpers.csproj
+      working-directory: /home/runner/work/helpers/helpers
     - name: Build
-      run: dotnet build "../../src/Moduler.Helpers/Moduler.Helper.csproj" --configuration Release --no-restore
+      run: dotnet build Moduler.Helpers/Moduler.Helpers.csproj --configuration Release --no-restore
+      working-directory: /home/runner/work/helpers/helpers
     - name: Test
-      run: dotnet test "../../src/Moduler.Helpers/Moduler.Helper.csproj" --no-build --verbosity normal
+      run: dotnet test Moduler.Helpers/Moduler.Helpers.csproj --no-build --verbosity normal
+      working-directory: /home/runner/work/helpers/helpers
     - name: Pack
-      run: dotnet pack "../../src/Moduler.Helpers/Moduler.Helper.csproj" --configuration Release --no-build --output ./bin/Release
+      run: dotnet pack Moduler.Helpers/Moduler.Helpers.csproj --configuration Release --no-build --output ./bin/Release
+      working-directory: /home/runner/work/helpers/helpers
     - name: NuGet Push
-      run: dotnet nuget push "../../src/Moduler.Helpers/bin/Release/*.nupkg" --source "github" --skip-duplicate
+      run: dotnet nuget push "./bin/Release/*.nupkg" --source "github" --skip-duplicate
+      working-directory: /home/runner/work/helpers/helpers
