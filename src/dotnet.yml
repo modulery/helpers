@@ -18,9 +18,9 @@ jobs:
       with:
         dotnet-version: netstandard2.1
     - name: Restore dependencies
-      run: dotnet restore src/Moduler.Helpers/Moduler.Helpers.csproj
+      run: dotnet restore ./Moduler.Helpers.sln
     - name: Build
-      run: dotnet build src/Moduler.Helpers/Moduler.Helpers.csproj --configuration Release --no-restore
+      run: dotnet build Moduler.Helpers/Moduler.Helpers.csproj --configuration Release --no-restore
     - name: Pack
       run: dotnet pack src/Moduler.Helpers/Moduler.Helpers.csproj --configuration Release --no-build --output ./bin/Release
     - name: NuGet Push
