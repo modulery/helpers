@@ -20,10 +20,10 @@ jobs:
     - name: Restore dependencies
       run: dotnet restore
     - name: Build
-      run: dotnet build "Moduler.Helper.csproj" --configuration Release --no-restore
+      run: dotnet build "../../src/Moduler.Helpers/Moduler.Helper.csproj" --configuration Release --no-restore
     - name: Test
-      run: dotnet test "Moduler.Helper.csproj" --no-build --verbosity normal
+      run: dotnet test "../../src/Moduler.Helpers/Moduler.Helper.csproj" --no-build --verbosity normal
     - name: Pack
-      run: dotnet pack "Moduler.Helper.csproj" --configuration Release --no-build --output ./bin/Release
+      run: dotnet pack "../../src/Moduler.Helpers/Moduler.Helper.csproj" --configuration Release --no-build --output ./bin/Release
     - name: NuGet Push
-      run: dotnet nuget push "./bin/Release/*.nupkg" --source "github" --skip-duplicate
+      run: dotnet nuget push "../../src/Moduler.Helpers/bin/Release/*.nupkg" --source "github" --skip-duplicate
