@@ -16,7 +16,7 @@ jobs:
     - name: Setup .NET
       uses: actions/setup-dotnet@v3
     - name: Restore dependencies
-      run: dotnet restore ../../src/Moduler.Helpers.sln
+      run: dotnet restore ../../src/Moduler.Helpers/Moduler.Helpers.csproj
     - name: Build
       run: dotnet build ../../src/Moduler.Helpers/Moduler.Helpers.csproj --configuration Release --no-restore
     - name: Pack
