@@ -16,11 +16,11 @@ jobs:
     - name: Setup .NET
       uses: actions/setup-dotnet@v3
     - name: Restore dependencies
-      run: dotnet restore ./Moduler.Helpers.sln
+      run: dotnet restore ../../src/Moduler.Helpers.sln
     - name: Build
-      run: dotnet build Moduler.Helpers/Moduler.Helpers.csproj --configuration Release --no-restore
+      run: dotnet build ../../src/Moduler.Helpers/Moduler.Helpers.csproj --configuration Release --no-restore
     - name: Pack
-      run: dotnet pack src/Moduler.Helpers/Moduler.Helpers.csproj --configuration Release --no-build --output ./bin/Release
+      run: dotnet pack ../../src/Moduler.Helpers/Moduler.Helpers.csproj --configuration Release --no-build --output ./bin/Release
     - name: NuGet Push
       run: dotnet nuget push "./bin/Release/*.nupkg" --source "github" --skip-duplicate
       working-directory: src/Moduler.Helpers
