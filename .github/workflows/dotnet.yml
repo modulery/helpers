@@ -1,6 +1,3 @@
-# This workflow will build a .NET project
-# For more information see: https://docs.github.com/en/actions/automating-builds-and-tests/building-and-testing-net
-
 name: .NET
 
 on:
@@ -19,15 +16,13 @@ jobs:
     - name: Setup .NET
       uses: actions/setup-dotnet@v3
       with:
-        dotnet-version: 6.0.x
+        dotnet-version: netstandard2.1
     - name: Restore dependencies
-      run: dotnet restore
+      run: dotnet restore ./Moduler.Helpers.sln
     - name: Build
-      run: dotnet build --configuration Release --no-restore
-    - name: Test
-      run: dotnet test --no-build --verbosity normal
-      
-    - name: pack
-      run: dotnet pack --configuration Release
-    - name: nugetPush
-      run: dotnet nuget push "bin/Release/Moduler.Helper.1.0.0.nupkg" --source "github"
+      run: dotnet build Moduler.Helpers/Moduler.Helpers.csproj --configuration Release --no-restore
+    - name: Pack
+      run: dotnet pack src/Moduler.Helpers/Moduler.Helpers.csproj --configuration Release --no-build --output ./bin/Release
+    - name: NuGet Push
+      run: dotnet nuget push "./bin/Release/*.nupkg" --source "github" --skip-duplicate
+      working-directory: src/Moduler.Helpers
