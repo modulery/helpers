@@ -22,4 +22,4 @@ jobs:
     - name: Pack
       run: dotnet pack ./src/Moduler.Helpers/Moduler.Helpers.csproj --configuration Release --no-build --output ./bin/Release
     - name: NuGet Push
-      run: dotnet nuget push "./src/Moduler.Helpers/bin/Release/*.nupkg" --source "https://nuget.pkg.github.com/modulery/index.json" --skip-duplicate --api-key ${{ secrets.GITCLIAPIKEY }}
+      run: dotnet nuget push "./src/Moduler.Helpers/bin/Release/*.nupkg" --source "https://nuget.pkg.github.com/modulery/index.json" --skip-duplicate --api-key ${{ secrets.MODULERY }}
