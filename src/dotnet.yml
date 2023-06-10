@@ -18,14 +18,11 @@ jobs:
       with:
         dotnet-version: netstandard2.1
     - name: Restore dependencies
-      run: dotnet restore Moduler.Helpers.csproj
-      working-directory: src/Moduler.Helpers
+      run: dotnet restore src/Moduler.Helpers/Moduler.Helpers.csproj
     - name: Build
-      run: dotnet build Moduler.Helpers.csproj --configuration Release --no-restore
-      working-directory: src/Moduler.Helpers
+      run: dotnet build src/Moduler.Helpers/Moduler.Helpers.csproj --configuration Release --no-restore
     - name: Pack
-      run: dotnet pack Moduler.Helpers.csproj --configuration Release --no-build --output ./bin/Release
-      working-directory: src/Moduler.Helpers
+      run: dotnet pack src/Moduler.Helpers/Moduler.Helpers.csproj --configuration Release --no-build --output ./bin/Release
     - name: NuGet Push
       run: dotnet nuget push "./bin/Release/*.nupkg" --source "github" --skip-duplicate
       working-directory: src/Moduler.Helpers
