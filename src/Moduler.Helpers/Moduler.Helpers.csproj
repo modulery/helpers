@@ -13,8 +13,9 @@
     <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
     <Company>Moduler.Yazilim</Company>
 	<PackageId>Moduler.Helper</PackageId>
-	<Version>1.0.3</Version>
+	<Version>1.0.4</Version>
 	<Authors>Mesut Tasci</Authors>
+	<Descriptions>Deneme</Descriptions>
 	<RepositoryUrl>https://github.com/modulery/helpers/</RepositoryUrl>
   </PropertyGroup>
 
