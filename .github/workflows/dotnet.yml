@@ -16,7 +16,7 @@ jobs:
     - name: Setup .NET
       uses: actions/setup-dotnet@v3
       with:
-        dotnet-version: netstandard2.1
+        dotnet-version: netstandard2
     - name: Restore dependencies
       run: dotnet restore ./Moduler.Helpers.sln
     - name: Build
