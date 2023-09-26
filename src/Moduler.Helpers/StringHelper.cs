@@ -87,7 +87,7 @@ namespace Moduler.Helpers
 
             return value;
         }
-        public static List<MyCurrency> PriceToAmountAndCurrency(string value)
+        public static List<MyCurrency> PriceToAmountAndCurrency(this string value)
         {
             var result = new List<MyCurrency>();
             value = value.Replace("<sup>", "").Replace("</sup>", "");
