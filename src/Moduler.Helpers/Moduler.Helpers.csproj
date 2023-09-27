@@ -13,9 +13,9 @@
 		<GeneratePackageOnBuild>True</GeneratePackageOnBuild>
 		<Company>Moduler.Yazilim</Company>
 		<PackageId>Moduler.Helper</PackageId>
-		<Version>1.0.5</Version>
+		<Version>1.0.6</Version>
 		<Authors>Mesut Tasci</Authors>
-		<PackageDescription>Deneme</PackageDescription>
+		<PackageDescription>ListDataMigrationExtension</PackageDescription>
 		<RepositoryUrl>https://github.com/modulery/helpers/</RepositoryUrl>
 	</PropertyGroup>
 

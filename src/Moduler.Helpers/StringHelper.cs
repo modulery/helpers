@@ -22,7 +22,7 @@ namespace Moduler.Helpers
             int.TryParse(value, out result);
             return result;
         }
-        public static double GetDouble(string value)
+        public static double GetDouble(this string value)
         {
             value = value.Trim().Replace(".", "");
             //var aaa = digitsOnly.Replace(value, "");
