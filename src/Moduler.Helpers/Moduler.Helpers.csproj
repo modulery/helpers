@@ -13,7 +13,7 @@
 		<GeneratePackageOnBuild>True</GeneratePackageOnBuild>
 		<Company>Moduler.Yazilim</Company>
 		<PackageId>Moduler.Helper</PackageId>
-		<Version>1.0.6</Version>
+		<Version>1.0.7</Version>
 		<Authors>Mesut Tasci</Authors>
 		<PackageDescription>ListDataMigrationExtension</PackageDescription>
 		<RepositoryUrl>https://github.com/modulery/helpers/</RepositoryUrl>
@@ -22,6 +22,7 @@
 	<ItemGroup>
 		<PackageReference Include="Microsoft.AspNetCore.Http.Abstractions" Version="2.2.0" />
 		<PackageReference Include="MongoDB.Driver" Version="2.17.1" />
+		<PackageReference Include="RestSharp" Version="110.2.0" />
 		<PackageReference Include="System.ComponentModel.Annotations" Version="5.0.0" />
 		<PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
 	</ItemGroup>
