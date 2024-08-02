@@ -33,5 +33,13 @@ namespace Moduler.Helpers
             }
             return client;
         }
+        public static string TestClient()
+        {
+            var url = "https://api.ipify.org/";
+            var client = GetClient(url);
+            var request = new RestRequest(url, method: Method.Get);
+            var response = client.Execute(request).Content;
+            return response;
+        }
     }
 }
